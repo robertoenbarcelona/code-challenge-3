@@ -65,7 +65,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BehaviourInterfaceFixture.cs" />
-    <Compile Include="InMemorySpyDriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

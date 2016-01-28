@@ -36,7 +36,7 @@ namespace Challenge3.UI
         /// </summary>
         /// <param name="userNeed">The user need.</param>
         /// <returns>A <see cref="CommandResult"/> instance with result information</returns>
-        public CommandResult HandleCommand(string userNeed)
+        public virtual CommandResult HandleCommand(string userNeed)
         {
             if (userNeed == this.Key)
             {

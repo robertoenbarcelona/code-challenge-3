@@ -14,22 +14,6 @@ namespace Challenge3.UITests
     [TestClass]
     public class BehaviourInterfaceFixture
     {
-
-        [ClassInitialize()]
-        public static void ClassInit(TestContext context)
-        {
-        }
-
-        [TestInitialize()]
-        public void Initialize()
-        {
-        }
-
-        [TestCleanup()]
-        public void Cleanup()
-        {
-        }
-
         /// <summary>
         /// Handling user needs resists input failures.
         /// </summary>
@@ -53,7 +37,7 @@ namespace Challenge3.UITests
         /// Handling user needs resists input failures.
         /// </summary>
         [TestMethod]
-        public void HandleUserNeedsLogsFailures()
+        public void HandleUserNeedsLogsInputFailures()
         {
             //Arrange
             var spy = A.Fake<IInputOutputDriver>();
@@ -67,6 +51,25 @@ namespace Challenge3.UITests
 
             //Assert
             A.CallTo(() => spy.Output(expectedMessage)).MustHaveHappened(Repeated.Exactly.Once);
+        }
+
+        /// <summary>
+        /// Handling user needs call chain resolution.
+        /// </summary>
+        [TestMethod]
+        public void HandleUserNeedCallChainResolution()
+        {
+            //Arrange
+            var spy = A.Fake<IInputOutputDriver>();
+            A.CallTo(() => spy.Input()).Returns(A.Dummy<string>());
+            var doc = A.Fake<BaseCommandInterpreter>();
+            BehaviourInterface sut = new BehaviourInterface(doc, spy);
+
+            //Act
+            var dummy = sut.HandleUserNeeds();
+
+            //Assert
+            A.CallTo(() => doc.HandleCommand(A<string>.Ignored)).MustHaveHappened(Repeated.Exactly.Once);
         }
     }
 }

@@ -10,6 +10,7 @@ namespace Challenge3.ConsoleHost
 
         static void Main(string[] args)
         {
+
             bool keepRunning = true;
             while (keepRunning)
             {

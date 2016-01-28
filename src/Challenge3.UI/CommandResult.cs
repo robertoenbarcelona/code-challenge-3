@@ -7,14 +7,16 @@ namespace Challenge3.UI
     public class CommandResult
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CommandResult"/> class.
+        /// Initializes a new instance of the <see cref="CommandResult" /> class.
         /// </summary>
         /// <param name="hasSucceed">if set to <c>true</c> [has succeed].</param>
         /// <param name="message">The message.</param>
-        public CommandResult(bool hasSucceed, string message)
+        /// <param name="isTerminating">if set to <c>true</c> [is terminating].</param>
+        public CommandResult(bool hasSucceed, string message, bool isTerminating = false)
         {
             this.HasSucceed = hasSucceed;
             this.Message = message;
+            this.IsTerminating = isTerminating;
         }
 
         /// <summary>

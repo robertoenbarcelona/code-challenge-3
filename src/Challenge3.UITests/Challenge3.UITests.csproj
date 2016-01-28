@@ -64,8 +64,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BaseCommandInterpreterFixture.cs" />
     <Compile Include="BehaviourInterfaceFixture.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCommandInterpreter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

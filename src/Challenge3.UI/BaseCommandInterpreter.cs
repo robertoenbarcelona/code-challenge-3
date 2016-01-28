@@ -6,6 +6,7 @@ namespace Challenge3.UI
     /// </summary>
     public abstract class BaseCommandInterpreter
     {
+        private readonly string key;
         private BaseCommandInterpreter successor;
 
         /// <summary>
@@ -14,13 +15,13 @@ namespace Challenge3.UI
         /// <param name="key">The key.</param>
         protected BaseCommandInterpreter(string key)
         {
-            this.Key = key;
+            this.key = key;
         }
 
         /// <summary>
-        /// Gets the key.
+        /// Gets the successor.
         /// </summary>
-        protected string Key { get; private set; }
+        protected internal BaseCommandInterpreter Successor { get { return this.successor; } }
 
         /// <summary>
         /// Sets the successor in the responsibility chain.
@@ -38,14 +39,14 @@ namespace Challenge3.UI
         /// <returns>A <see cref="CommandResult"/> instance with result information</returns>
         public virtual CommandResult HandleCommand(string userNeed)
         {
-            if (userNeed == this.Key)
+            if (userNeed == this.key)
             {
                 return this.Handle();
             }
             else
             {
-                if (this.successor == null) { return new CommandResult(false, Properties.Resources.CommandUnrecognized); }
-                else { return this.successor.HandleCommand(userNeed); }
+                if (this.Successor == null) { return new CommandResult(false, Properties.Resources.CommandUnrecognized); }
+                else { return this.Successor.HandleCommand(userNeed); }
             }
         }
 

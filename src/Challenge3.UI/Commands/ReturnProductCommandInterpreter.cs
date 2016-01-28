@@ -1,19 +1,19 @@
 ﻿
-namespace Challenge3.UI
+namespace Challenge3.UI.Commands
 {
     using System;
 
     /// <summary>
-    /// Interprets the Hire command
+    /// Interprets the Devolution command
     /// </summary>
-    internal class RegisterProductCommandInterpreter : BaseCommandInterpreter
+    internal class ReturnProductCommandInterpreter : BaseCommandInterpreter
     {
-        private const string CommandKey = "R";
+        private const string CommandKey = "D";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RegisterProductCommandInterpreter"/> class.
         /// </summary>
-        public RegisterProductCommandInterpreter() : base(RegisterProductCommandInterpreter.CommandKey) { }
+        public ReturnProductCommandInterpreter() : base(ReturnProductCommandInterpreter.CommandKey) { }
 
         /// <summary>
         /// Handles the command.

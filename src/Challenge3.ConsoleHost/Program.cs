@@ -10,12 +10,12 @@ namespace Challenge3.ConsoleHost
 
         static void Main(string[] args)
         {
-
-            bool keepRunning = true;
-            while (keepRunning)
+            bool userNeedsMore;
+            do
             {
-                keepRunning = Program.Interpreter.HandleUserNeeds();
-            }
+                userNeedsMore = Program.Interpreter.HandleUserNeeds();
+
+            } while (userNeedsMore);
         }
     }
 }

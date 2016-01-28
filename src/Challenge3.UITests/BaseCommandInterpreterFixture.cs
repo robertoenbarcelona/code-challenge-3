@@ -6,10 +6,12 @@ namespace Challenge3.UITests
     using Challenge3.UI;
     using FakeItEasy;
     using FluentAssertions;
+    using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
     /// Handle all ConsoleInterface test
     /// </summary>
+    [ExcludeFromCodeCoverage]
     [TestClass]
     public class BaseCommandInterpreterFixture
     {
@@ -17,7 +19,7 @@ namespace Challenge3.UITests
         /// Setting the succesor put the next evaluator in chain.
         /// </summary>
         [TestMethod]
-        public void SettingSuccesorPutTheNextEvaluator()
+        public void BaseCommandInterpreter_SettingSuccesorPutTheNextEvaluator()
         {
             //Arrange
             var sut = A.Fake<BaseCommandInterpreter>();
@@ -33,7 +35,7 @@ namespace Challenge3.UITests
         /// <summary>
         /// A Command can interpret his own opertion.
         /// </summary>
-        public void CommandInterpretsHisOwnOpertion()
+        public void BaseCommandInterpreter_CommandInterpretsHisOwnOpertion()
         {
             //Arrange
             var sut = new TestCommandInterpreter();
@@ -50,7 +52,7 @@ namespace Challenge3.UITests
         /// Chains calls next evaluator.
         /// </summary>
         [TestMethod]
-        public void ChainCallsNextEvaluator()
+        public void BaseCommandInterpreter_ChainCallsNextEvaluator()
         {
             //Arrange
             var doc = A.Fake<BaseCommandInterpreter>();
@@ -68,7 +70,7 @@ namespace Challenge3.UITests
         /// <summary>
         /// Chains handles unknown command.
         /// </summary>
-        public void ChainHandlesUnknownCommand()
+        public void BaseCommandInterpreter_ChainHandlesUnknownCommand()
         {
             //Arrange
             var sut = new TestCommandInterpreter();

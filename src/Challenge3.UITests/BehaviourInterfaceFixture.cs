@@ -7,10 +7,12 @@ namespace Challenge3.UITests
     using Challenge3.UI;
     using FakeItEasy;
     using FluentAssertions;
+    using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
     /// Handle all ConsoleInterface test
     /// </summary>
+    [ExcludeFromCodeCoverage]
     [TestClass]
     public class BehaviourInterfaceFixture
     {
@@ -18,7 +20,7 @@ namespace Challenge3.UITests
         /// Handling user needs resists input failures.
         /// </summary>
         [TestMethod]
-        public void HandleUserNeedsResistsInputFailures()
+        public void BehaviourInterface_HandleUserNeedsResistsInputFailures()
         {
             //Arrange
             var spy = A.Fake<IInputOutputDriver>();
@@ -37,7 +39,7 @@ namespace Challenge3.UITests
         /// Handling user needs resists input failures.
         /// </summary>
         [TestMethod]
-        public void HandleUserNeedsLogsInputFailures()
+        public void BehaviourInterface_HandleUserNeedsLogsInputFailures()
         {
             //Arrange
             var spy = A.Fake<IInputOutputDriver>();
@@ -57,7 +59,7 @@ namespace Challenge3.UITests
         /// Handling user needs call chain resolution.
         /// </summary>
         [TestMethod]
-        public void HandleUserNeedCallChainResolution()
+        public void BehaviourInterface_HandleUserNeedCallChainResolution()
         {
             //Arrange
             var spy = A.Fake<IInputOutputDriver>();

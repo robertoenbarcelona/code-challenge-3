@@ -1,5 +1,5 @@
 ﻿
-namespace Challenge3.UI
+namespace Challenge3.UI.Commands
 {
     using System;
 

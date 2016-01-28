@@ -4,7 +4,9 @@ namespace Challenge3.UITests
     using Challenge3.UI;
     using FakeItEasy;
     using System;
+    using System.Diagnostics.CodeAnalysis;
 
+    [ExcludeFromCodeCoverage]
     internal class TestCommandInterpreter : BaseCommandInterpreter
     {
         private const string CommandKey = Constants.TestKey;

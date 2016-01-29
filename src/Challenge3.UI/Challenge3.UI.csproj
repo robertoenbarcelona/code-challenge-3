@@ -43,7 +43,7 @@
     <Compile Include="CommandResult.cs" />
     <Compile Include="BehaviourInterface.cs" />
     <Compile Include="Commands\Constants.cs" />
-    <Compile Include="Commands\HireProductCommandInterpreter.cs" />
+    <Compile Include="Commands\RentProductCommandInterpreter.cs" />
     <Compile Include="IInputOutputDriver.cs" />
     <Compile Include="Commands\PayFineCommandInterpreter.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -55,7 +55,7 @@
     <Compile Include="BaseCommandInterpreter.cs" />
     <Compile Include="IHumanToSoftwareInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Commands\ReturnProductCommandInterpreter.cs" />
+    <Compile Include="Commands\ReturnRentCommandInterpreter.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.es-ES.resx" />

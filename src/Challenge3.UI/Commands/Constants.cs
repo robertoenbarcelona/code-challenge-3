@@ -8,7 +8,8 @@ namespace Challenge3.UI.Commands
 {
     internal static class Constants
     {
-        internal const string HireKey = "P";
-
+        internal const string RentKey = "P";
+        internal const string RegisterProductKey = "R";
+        internal const string ReturnRentKey = "D";
     }
 }

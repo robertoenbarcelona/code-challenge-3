@@ -126,6 +126,15 @@
   <data name="Error" xml:space="preserve">
     <value>Inespetec error: {0}</value>
   </data>
+  <data name="InformName" xml:space="preserve">
+    <value>Please inform name:</value>
+  </data>
+  <data name="InformProduct" xml:space="preserve">
+    <value>Please inform product code:</value>
+  </data>
+  <data name="InformUser" xml:space="preserve">
+    <value>Please inform user code:</value>
+  </data>
   <data name="OperationResult" xml:space="preserve">
     <value>Operation {0} : {1}</value>
   </data>

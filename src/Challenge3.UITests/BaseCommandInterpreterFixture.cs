@@ -38,7 +38,8 @@ namespace Challenge3.UITests
         public void BaseCommandInterpreter_CommandInterpretsHisOwnOpertion()
         {
             //Arrange
-            var sut = new TestCommandInterpreter();
+            var doc = A.Fake<IInputOutputDriver>();
+            var sut = new TestCommandInterpreter(doc);
 
             //Act
             var res = sut.HandleCommand(Constants.TestKey);
@@ -56,7 +57,8 @@ namespace Challenge3.UITests
         {
             //Arrange
             var doc = A.Fake<BaseCommandInterpreter>();
-            var sut = new TestCommandInterpreter();
+            var driver = A.Fake<IInputOutputDriver>();
+            var sut = new TestCommandInterpreter(driver);
             sut.SetSuccessor(doc);
             var anotherValue = Constants.AnotherKey;
 
@@ -73,7 +75,8 @@ namespace Challenge3.UITests
         public void BaseCommandInterpreter_ChainHandlesUnknownCommand()
         {
             //Arrange
-            var sut = new TestCommandInterpreter();
+            var doc = A.Fake<IInputOutputDriver>();
+            var sut = new TestCommandInterpreter(doc);
             var anotherValue = Constants.AnotherKey;
 
             //Act

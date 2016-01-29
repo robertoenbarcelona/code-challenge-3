@@ -7,21 +7,27 @@ namespace Challenge3.UI
     public abstract class BaseCommandInterpreter
     {
         private readonly string key;
+        private readonly IInputOutputDriver driver;
         private BaseCommandInterpreter successor;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BaseCommandInterpreter"/> class.
+        /// Initializes a new instance of the <see cref="BaseCommandInterpreter" /> class.
         /// </summary>
         /// <param name="key">The key.</param>
-        protected BaseCommandInterpreter(string key)
+        /// <param name="driver">The driver.</param>
+        protected BaseCommandInterpreter(string key, IInputOutputDriver driver)
         {
             this.key = key;
+            this.driver = driver;
         }
 
         /// <summary>
         /// Gets the successor.
         /// </summary>
         protected internal BaseCommandInterpreter Successor { get { return this.successor; } }
+
+        protected internal IInputOutputDriver Driver { get { return this.driver; } }
+
 
         /// <summary>
         /// Sets the successor in the responsibility chain.

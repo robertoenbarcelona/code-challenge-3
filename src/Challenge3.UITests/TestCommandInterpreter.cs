@@ -14,7 +14,7 @@ namespace Challenge3.UITests
         /// <summary>
         /// Initializes a new instance of the <see cref="RegisterProductCommandInterpreter"/> class.
         /// </summary>
-        internal TestCommandInterpreter() : base(TestCommandInterpreter.CommandKey) { }
+        internal TestCommandInterpreter(IInputOutputDriver driver) : base(TestCommandInterpreter.CommandKey, driver) { }
 
         /// <summary>
         /// Handles the command.

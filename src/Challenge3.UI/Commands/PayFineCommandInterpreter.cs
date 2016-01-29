@@ -13,7 +13,7 @@ namespace Challenge3.UI.Commands
         /// <summary>
         /// Initializes a new instance of the <see cref="RegisterProductCommandInterpreter"/> class.
         /// </summary>
-        public PayFineCommandInterpreter() : base(PayFineCommandInterpreter.CommandKey) { }
+        public PayFineCommandInterpreter(IInputOutputDriver driver) : base(PayFineCommandInterpreter.CommandKey, driver) { }
 
         /// <summary>
         /// Handles the command.

@@ -5,27 +5,26 @@ namespace Challenge3.UI.Commands
     using System;
 
     /// <summary>
-    /// Interprets the Hire command
+    /// Interprets the Devolution command
     /// </summary>
-    internal class RegisterProductCommandInterpreter : BaseCommandInterpreter
+    internal class ReturnRentCommandInterpreter : BaseCommandInterpreter
     {
-        private const string CommandKey = Constants.RegisterProductKey;
-        private readonly IAppProductService productService;
+        private const string CommandKey = Constants.ReturnRentKey;
+        private readonly IAppRentService rentService;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RegisterProductCommandInterpreter" /> class.
+        /// Initializes a new instance of the <see cref="RegisterProductCommandInterpreter"/> class.
         /// </summary>
-        /// <param name="driver">The driver.</param>
-        /// <param name="productService">The product service.</param>
-        public RegisterProductCommandInterpreter(IInputOutputDriver driver, IAppProductService productService) :
-            base(RegisterProductCommandInterpreter.CommandKey, driver)
+        public ReturnRentCommandInterpreter(IInputOutputDriver driver, IAppRentService rentService)
+            : base(ReturnRentCommandInterpreter.CommandKey, driver) 
         {
-            this.productService = productService;
+            this.rentService = rentService;
         }
-       
+
         /// <summary>
         /// Handles the command.
         /// </summary>
+        /// <param name="userNeed">The user need.</param>
         /// <returns>A <see cref="CommandResult"/> instance with result information</returns>
         protected override CommandResult Handle()
         {
@@ -33,9 +32,9 @@ namespace Challenge3.UI.Commands
             {
                 base.Driver.Output(Properties.Resources.InformProduct);
                 var productId = base.Driver.Input();
-                base.Driver.Output(Properties.Resources.InformName);
+                base.Driver.Output(Properties.Resources.InformUser);
                 var userID = base.Driver.Input();
-                var result = this.productService.Register(productId, userID);
+                var result = this.rentService.ReturnProduct(productId, userID, DateTime.Now);
                 return new CommandResult(result.Succeed, result.Message);
             }
             catch (Exception ex)

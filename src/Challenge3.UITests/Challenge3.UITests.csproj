@@ -68,9 +68,11 @@
     <Compile Include="BaseCommandInterpreterFixture.cs" />
     <Compile Include="BehaviourInterfaceFixture.cs" />
     <Compile Include="Constants.cs" />
-    <Compile Include="HireProductCommandInterpreterFixture.cs" />
+    <Compile Include="RentProductCommandInterpreterFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReturnRentCommandInterpreterFixture.cs" />
     <Compile Include="TestCommandInterpreter.cs" />
+    <Compile Include="RegisterProductCommandInterpreterFixture.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

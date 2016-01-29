@@ -88,6 +88,33 @@ namespace Challenge3.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please inform name:.
+        /// </summary>
+        internal static string InformName {
+            get {
+                return ResourceManager.GetString("InformName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please inform product code:.
+        /// </summary>
+        internal static string InformProduct {
+            get {
+                return ResourceManager.GetString("InformProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please inform user code:.
+        /// </summary>
+        internal static string InformUser {
+            get {
+                return ResourceManager.GetString("InformUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Operation {0} : {1}.
         /// </summary>
         internal static string OperationResult {

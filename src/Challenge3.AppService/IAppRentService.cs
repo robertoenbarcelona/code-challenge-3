@@ -9,6 +9,8 @@ namespace Challenge3.AppService
 
     public interface IAppRentService
     {
-        OperationMessage Hire(string bookId, string userID);
+        OperationMessage RentProduct(string productId, string userID);
+
+        OperationMessage ReturnProduct(string productId, string userID, DateTime dateTime);
     }
 }

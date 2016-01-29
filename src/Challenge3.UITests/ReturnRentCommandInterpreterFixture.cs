@@ -1,5 +1,4 @@
 ﻿
-
 namespace Challenge3.UITests
 {
     using System;
@@ -13,21 +12,21 @@ namespace Challenge3.UITests
 
     [ExcludeFromCodeCoverage]
     [TestClass]
-    public class HireProductCommandInterpreterFixture
+    public class ReturnRentCommandInterpreterFixture
     {
         [TestMethod]
-        public void HireProductCommandInterpreter_HandleHire()
+        public void ReturnRentCommandInterpreter_HandleReturn()
         {
             //Arrange
             var driver = A.Fake<IInputOutputDriver>();
             var rentService = A.Fake<IAppRentService>();
             var expectedMessage = "Expected";
             A.CallTo(() => driver.Input()).Returns(A.Dummy<string>());
-            A.CallTo(() => rentService.Hire(A<string>.Ignored, A<string>.Ignored)).Returns(new OperationMessage() { Succeed = true, Message = expectedMessage });
-            var sut = new HireProductCommandInterpreter(driver, rentService);
+            A.CallTo(() => rentService.ReturnProduct(A<string>.Ignored, A<string>.Ignored, A<DateTime>.Ignored)).Returns(new OperationMessage() { Succeed = true, Message = expectedMessage });
+            var sut = new ReturnRentCommandInterpreter(driver, rentService);
 
             //Act
-            var res = sut.HandleCommand(Challenge3.UI.Commands.Constants.HireKey);
+            var res = sut.HandleCommand(Challenge3.UI.Commands.Constants.ReturnRentKey);
 
             //Assert
             res.HasSucceed.Should().BeTrue();
@@ -36,14 +35,14 @@ namespace Challenge3.UITests
         }
 
         [TestMethod]
-        public void HireProductCommandInterpreter_NotHandleAnotherKey()
+        public void ReturnRentCommandInterpreter_NotHandleAnotherKey()
         {
             //Arrange
             var driver = A.Fake<IInputOutputDriver>();
             var rentService = A.Fake<IAppRentService>();
             A.CallTo(() => driver.Input()).Returns(A.Dummy<string>());
-            A.CallTo(() => rentService.Hire(A<string>.Ignored, A<string>.Ignored)).Returns(new OperationMessage() { Succeed = true, Message = A.Dummy<string>() });
-            var sut = new HireProductCommandInterpreter(driver, rentService);
+            A.CallTo(() => rentService.ReturnProduct(A<string>.Ignored, A<string>.Ignored, A<DateTime>.Ignored)).Returns(new OperationMessage() { Succeed = true, Message = A.Dummy<string>() });
+            var sut = new ReturnRentCommandInterpreter(driver, rentService);
 
             //Act
             var res = sut.HandleCommand(Constants.AnotherKey);
@@ -55,18 +54,18 @@ namespace Challenge3.UITests
         }
 
         [TestMethod]
-        public void HireProductCommandInterpreter_ResistAppServiceFailure()
+        public void ReturnRentCommandInterpreter_ResistAppServiceFailure()
         {
             //Arrange
             var driver = A.Fake<IInputOutputDriver>();
             var rentService = A.Fake<IAppRentService>();
             var expectedMessage = "Expected";
             A.CallTo(() => driver.Input()).Returns(A.Dummy<string>());
-            A.CallTo(() => rentService.Hire(A<string>.Ignored, A<string>.Ignored)).Throws(new Exception(expectedMessage));
-            var sut = new HireProductCommandInterpreter(driver, rentService);
+            A.CallTo(() => rentService.ReturnProduct(A<string>.Ignored, A<string>.Ignored, A<DateTime>.Ignored)).Throws(new Exception(expectedMessage));
+            var sut = new ReturnRentCommandInterpreter(driver, rentService);
 
             //Act
-            var res = sut.HandleCommand(Challenge3.UI.Commands.Constants.HireKey);
+            var res = sut.HandleCommand(Challenge3.UI.Commands.Constants.ReturnRentKey);
 
             //Assert
             res.HasSucceed.Should().BeFalse();

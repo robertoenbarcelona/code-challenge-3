@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppRentService.cs" />
+    <Compile Include="IAppProductService.cs" />
     <Compile Include="IAppRentService.cs" />
     <Compile Include="OperationMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

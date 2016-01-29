@@ -2,7 +2,7 @@
 <#@ include file="EF6.Utility.CS.ttinclude"#><#@ 
  output extension=".cs"#><#
 
-const string inputFile = @"BiblioModel.edmx";
+const string inputFile = @"..\Challenge3.Data.EF6\BiblioModel.edmx";
 var textTransform = DynamicTextTransformation.Create(this);
 var code = new CodeGenerationTools(this);
 var ef = new MetadataTools(this);
@@ -24,8 +24,16 @@ foreach (var entity in typeMapper.GetItemsToGenerate<EntityType>(itemCollection)
     BeginNamespace(code);
 #>
 <#=codeStringGenerator.UsingDirectives(inHeader: false)#>
-<#=codeStringGenerator.EntityClassOpening(entity)#>
+using System.ComponentModel.DataAnnotations.Schema;
+using Infrastructure.Data;
+
+#pragma warning disable 1591
+
+[Serializable]
+<#=codeStringGenerator.EntityClassOpening(entity)#>: IObjectState
 {
+    [NotMapped]
+    public ObjectState ObjectState { get; set; }
 <#
     var propertiesWithDefaultValues = typeMapper.GetPropertiesWithDefaultValues(entity);
     var collectionNavigationProperties = typeMapper.GetCollectionNavigationProperties(entity);
@@ -112,6 +120,7 @@ foreach (var complex in typeMapper.GetItemsToGenerate<ComplexType>(itemCollectio
     BeginNamespace(code);
 #>
 <#=codeStringGenerator.UsingDirectives(inHeader: false, includeCollections: false)#>
+
 <#=Accessibility.ForType(complex)#> partial class <#=code.Escape(complex)#>
 {
 <#
@@ -250,6 +259,7 @@ public void EndNamespace(CodeGenerationTools code)
     {
         PopIndent();
 #>
+    #pragma warning restore 1591
 }
 <#+
     }

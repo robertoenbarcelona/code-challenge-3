@@ -7,21 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Challenge3.Data.EF6
+namespace Challenge3.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Fine
+    using System.ComponentModel.DataAnnotations.Schema;
+    using Infrastructure.Data;
+    
+    #pragma warning disable 1591
+    
+    [Serializable]
+    public partial class Book: IObjectState
     {
-        public int Id { get; set; }
-        public string UserCode { get; set; }
-        public System.DateTime CrationDate { get; set; }
-        public int DueDays { get; set; }
-        public decimal Value { get; set; }
-        public Nullable<System.DateTime> PayDate { get; set; }
+        [NotMapped]
+        public ObjectState ObjectState { get; set; }
+        public string Code { get; set; }
+        public int TypeId { get; set; }
+        public string Name { get; set; }
         public byte[] LineVersion { get; set; }
     
-        public virtual User User { get; set; }
+        public virtual ProductType ProductType { get; set; }
     }
+    #pragma warning restore 1591
 }

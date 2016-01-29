@@ -2,7 +2,7 @@
 <#@ include file="EF6.Utility.CS.ttinclude"#><#@
  output extension=".cs"#><#
 
-const string inputFile = @"EfModel.edmx";
+const string inputFile = @"BiblioModel.edmx";
 var textTransform = DynamicTextTransformation.Create(this);
 var code = new CodeGenerationTools(this);
 var ef = new MetadataTools(this);
@@ -43,7 +43,7 @@ namespace <#=code.EscapeNamespace(codeNamespace)#>
 using System;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
-using SCA.Infrastructure.Data.Ef6;
+using Infrastructure.Data.Ef6;
 
 #pragma warning disable 1591
 

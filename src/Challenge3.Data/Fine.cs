@@ -7,23 +7,30 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Challenge3.Data.EF6
+namespace Challenge3.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Rent
+    using System.ComponentModel.DataAnnotations.Schema;
+    using Infrastructure.Data;
+    
+    #pragma warning disable 1591
+    
+    [Serializable]
+    public partial class Fine: IObjectState
     {
+        [NotMapped]
+        public ObjectState ObjectState { get; set; }
         public int Id { get; set; }
-        public int ProductTypeId { get; set; }
-        public string ProductCode { get; set; }
         public string UserCode { get; set; }
-        public System.DateTime RentDate { get; set; }
-        public System.DateTime DueDate { get; set; }
-        public Nullable<System.DateTime> DevolutionDate { get; set; }
+        public System.DateTime CrationDate { get; set; }
+        public int DueDays { get; set; }
+        public decimal Value { get; set; }
+        public Nullable<System.DateTime> PayDate { get; set; }
         public byte[] LineVersion { get; set; }
     
-        public virtual ProductType ProductType { get; set; }
         public virtual User User { get; set; }
     }
+    #pragma warning restore 1591
 }

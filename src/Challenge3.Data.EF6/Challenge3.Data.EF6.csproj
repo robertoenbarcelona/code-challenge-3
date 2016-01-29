@@ -55,32 +55,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BiblioModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="BiblioModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BiblioModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="BiblioModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BiblioModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Book.cs">
-      <DependentUpon>BiblioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Fine.cs">
-      <DependentUpon>BiblioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProductType.cs">
-      <DependentUpon>BiblioModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rent.cs">
-      <DependentUpon>BiblioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="User.cs">
-      <DependentUpon>BiblioModel.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="BiblioModel.edmx">
@@ -99,15 +79,24 @@
     <None Include="BiblioModel.edmx.diagram">
       <DependentUpon>BiblioModel.edmx</DependentUpon>
     </None>
-    <None Include="BiblioModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BiblioModel.edmx</DependentUpon>
-      <LastGenOutput>BiblioModel.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Challenge3.Data\Challenge3.Data.csproj">
+      <Project>{92d29680-9dba-4e5f-99b9-575bf3625fca}</Project>
+      <Name>Challenge3.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.Data.EF6\Infrastructure.Data.EF6.csproj">
+      <Project>{8ea4511f-f968-4127-a929-50ea581043b0}</Project>
+      <Name>Infrastructure.Data.EF6</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.Data\Infrastructure.Data.csproj">
+      <Project>{aed94f51-68ec-4b2b-b20b-fe9edad398b2}</Project>
+      <Name>Infrastructure.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

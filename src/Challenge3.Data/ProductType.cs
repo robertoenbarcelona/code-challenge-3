@@ -7,13 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Challenge3.Data.EF6
+namespace Challenge3.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductType
+    using System.ComponentModel.DataAnnotations.Schema;
+    using Infrastructure.Data;
+    
+    #pragma warning disable 1591
+    
+    [Serializable]
+    public partial class ProductType: IObjectState
     {
+        [NotMapped]
+        public ObjectState ObjectState { get; set; }
         public ProductType()
         {
             this.Books = new HashSet<Book>();
@@ -31,4 +39,5 @@ namespace Challenge3.Data.EF6
         public virtual ICollection<Book> Books { get; set; }
         public virtual ICollection<Rent> Rents { get; set; }
     }
+    #pragma warning restore 1591
 }

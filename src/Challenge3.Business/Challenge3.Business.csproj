@@ -39,7 +39,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Challenge3.Data\Challenge3.Data.csproj">
+      <Project>{92d29680-9dba-4e5f-99b9-575bf3625fca}</Project>
+      <Name>Challenge3.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.Business.Service\Infrastructure.Business.Service.csproj">
+      <Project>{85f61d69-725e-483e-bf1e-bba56f85696f}</Project>
+      <Name>Infrastructure.Business.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.Data\Infrastructure.Data.csproj">
+      <Project>{aed94f51-68ec-4b2b-b20b-fe9edad398b2}</Project>
+      <Name>Infrastructure.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

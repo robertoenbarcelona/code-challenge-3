@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A60B1BF9-34B8-46F6-B9AE-B5030C7EE5EA}</ProjectGuid>
+    <ProjectGuid>{675BCFFA-9E67-41C6-AB65-C1016B1C4C26}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Challenge3.UI</RootNamespace>
-    <AssemblyName>Challenge3.UI</AssemblyName>
+    <RootNamespace>Challenge3.AppService</RootNamespace>
+    <AssemblyName>Challenge3.AppService</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,35 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandResult.cs" />
-    <Compile Include="BehaviourInterface.cs" />
-    <Compile Include="Commands\Constants.cs" />
-    <Compile Include="Commands\HireProductCommandInterpreter.cs" />
-    <Compile Include="IInputOutputDriver.cs" />
-    <Compile Include="Commands\PayFineCommandInterpreter.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Commands\RegisterProductCommandInterpreter.cs" />
-    <Compile Include="BaseCommandInterpreter.cs" />
-    <Compile Include="IHumanToSoftwareInterface.cs" />
+    <Compile Include="AppRentService.cs" />
+    <Compile Include="IAppRentService.cs" />
+    <Compile Include="OperationMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Commands\ReturnProductCommandInterpreter.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.es-ES.resx" />
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Challenge3.AppService\Challenge3.AppService.csproj">
-      <Project>{675bcffa-9e67-41c6-ab65-c1016b1c4c26}</Project>
-      <Name>Challenge3.AppService</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

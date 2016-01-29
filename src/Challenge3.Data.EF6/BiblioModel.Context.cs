@@ -12,8 +12,12 @@ namespace Challenge3.Data
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using Infrastructure.Data.Ef6;
     
-    public partial class Biblioteca : DbContext
+    #pragma warning disable 1591
+    
+    
+    public partial class Biblioteca : DataContext
     {
         public Biblioteca()
             : base("name=Biblioteca")
@@ -31,4 +35,6 @@ namespace Challenge3.Data
         public virtual DbSet<Rent> Rents { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }
+
+    #pragma warning restore 1591
 }

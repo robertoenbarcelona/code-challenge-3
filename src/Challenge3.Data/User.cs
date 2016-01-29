@@ -7,13 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Challenge3.Data.EF6
+namespace Challenge3.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    using System.ComponentModel.DataAnnotations.Schema;
+    using Infrastructure.Data;
+    
+    #pragma warning disable 1591
+    
+    [Serializable]
+    public partial class User: IObjectState
     {
+        [NotMapped]
+        public ObjectState ObjectState { get; set; }
         public User()
         {
             this.Fines = new HashSet<Fine>();
@@ -27,4 +35,5 @@ namespace Challenge3.Data.EF6
         public virtual ICollection<Fine> Fines { get; set; }
         public virtual ICollection<Rent> Rents { get; set; }
     }
+    #pragma warning restore 1591
 }

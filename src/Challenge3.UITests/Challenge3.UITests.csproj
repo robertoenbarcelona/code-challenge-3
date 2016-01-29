@@ -68,14 +68,18 @@
     <Compile Include="BaseCommandInterpreterFixture.cs" />
     <Compile Include="BehaviourInterfaceFixture.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="HireProductCommandInterpreterFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCommandInterpreter.cs" />
-    <Compile Include="HireProductCommandInterpreter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Challenge3.AppService\Challenge3.AppService.csproj">
+      <Project>{675bcffa-9e67-41c6-ab65-c1016b1c4c26}</Project>
+      <Name>Challenge3.AppService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Challenge3.UI\Challenge3.UI.csproj">
       <Project>{a60b1bf9-34b8-46f6-b9ae-b5030c7ee5ea}</Project>
       <Name>Challenge3.UI</Name>

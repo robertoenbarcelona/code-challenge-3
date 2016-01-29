@@ -12,7 +12,8 @@ using System;
         /// Initializes a new instance of the <see cref="RegisterProductCommandInterpreter" /> class.
         /// </summary>
         /// <param name="driver">The input output driver.</param>
-        public HireProductCommandInterpreter(IInputOutputDriver driver) : base(HireProductCommandInterpreter.CommandKey) 
+        public HireProductCommandInterpreter(IInputOutputDriver driver) :
+            base(HireProductCommandInterpreter.CommandKey) 
         {
             this.driver = driver;
         }
@@ -25,14 +26,12 @@ using System;
         {
             try
             {
-                this.driver.Output("Please inform product Id:");
+                this.driver.Output("Please inform product:");
                 var bookId = this.driver.Input();
-                this.driver.Output("Please inform user Id:");
+                this.driver.Output("Please inform user:");
                 var userID = this.driver.Input();
 
-                // instatiate biz comand
-                // ejecute it
-                // get response
+               
                 return new CommandResult(false, "Fake");
             }
             catch (Exception ex)

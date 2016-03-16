@@ -35,6 +35,7 @@ namespace Challenge3.UITests
         /// <summary>
         /// A Command can interpret his own opertion.
         /// </summary>
+        [TestMethod]
         public void BaseCommandInterpreter_CommandInterpretsHisOwnOpertion()
         {
             //Arrange
@@ -72,6 +73,7 @@ namespace Challenge3.UITests
         /// <summary>
         /// Chains handles unknown command.
         /// </summary>
+        [TestMethod]
         public void BaseCommandInterpreter_ChainHandlesUnknownCommand()
         {
             //Arrange

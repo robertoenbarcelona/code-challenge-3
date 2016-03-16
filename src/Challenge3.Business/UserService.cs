@@ -11,7 +11,7 @@ namespace Challenge3.Business
     /// <summary>
     /// Holds business operation for Users
     /// </summary>
-    internal class UserService : Service<User>
+    internal class UserService : Service<User>, IUserService
     {
         public UserService(IRepositoryAsync<User> repository)
             : base(repository)
